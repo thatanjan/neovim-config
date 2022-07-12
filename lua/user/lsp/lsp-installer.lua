@@ -29,6 +29,11 @@ for _, server in pairs(servers) do
     capabilities = require("user.lsp.handlers").capabilities,
   }
 
+  if server == "tsserver" then
+    local tsserver_opts = require "user.lsp.settings.tsserver"
+    opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
+  end
+
   if server == "sumneko_lua" then
     local sumneko_opts = require "user.lsp.settings.sumneko_lua"
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
