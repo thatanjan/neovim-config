@@ -1,5 +1,5 @@
 -- use this table to disable/enable filetypes
-vim.g.copilot_filetypes = { xml = false }
+vim.g.copilot_filetypes = { xml = false, markdown = true, markdownjsx = true }
 
 -- since most are enabled by default you can turn them off
 -- using this table and only enable for a few filetypes
