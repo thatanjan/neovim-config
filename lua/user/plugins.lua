@@ -104,6 +104,16 @@ return packer.startup(function(use)
 	-- MDX
 	use("findango/vim-mdx")
 
+	-- Trouble.nvim
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			local troubleConfig = require("./trouble")
+			require("trouble").setup(troubleConfig)
+		end,
+	})
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
