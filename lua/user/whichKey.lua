@@ -80,19 +80,30 @@ local opts = {
 
 local mappings = {
 	a = { "<cmd>Alpha<cr>", "Alpha" },
-	b = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
-	},
 	e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+
 	f = {
-		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Find files",
+		name = "Telescope Find",
+		b = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Buffers",
+		},
+		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+		f = {
+			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Find files",
+		},
+		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+		R = { "<cmd>Telescope registers<cr>", "Registers" },
+		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+		P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	},
-	F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
 	w = {
 		name = "Write",
@@ -168,17 +179,6 @@ local mappings = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
-	},
-	s = {
-		name = "Search",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-		R = { "<cmd>Telescope registers<cr>", "Registers" },
-		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
 
 	t = {
