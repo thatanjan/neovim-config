@@ -10,7 +10,7 @@ local diagnostics = null_ls.builtins.diagnostics
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-local lsp_formatting = function(bufnr)
+local function format(bufnr)
 	vim.lsp.buf.format({
 		filter = function(client)
 			-- apply whatever logic you want (in this example, we'll only use null-ls)
@@ -19,6 +19,10 @@ local lsp_formatting = function(bufnr)
 		bufnr = bufnr,
 		timeout_ms = 3000,
 	})
+end
+
+local lsp_formatting = function(bufnr)
+	format(bufnr)
 end
 
 -- add to your shared on_attach callback
@@ -32,6 +36,8 @@ local on_attach = function(client, bufnr)
 				lsp_formatting(bufnr)
 			end,
 		})
+
+		vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({async=true})' ]])
 	end
 end
 
