@@ -113,7 +113,7 @@ local mappings = {
 	q = {
 		name = "Quit",
 		b = { "<cmd>bw<CR>", "Quit Current Buffer" },
-		a = { "<cmd>bw<CR>", "Quit All Buffers" },
+		a = { "<cmd>bufdo bd<CR>", "Quit All Buffers" },
 		q = { "<cmd>q<CR>", "Quit Editor" },
 	},
 
