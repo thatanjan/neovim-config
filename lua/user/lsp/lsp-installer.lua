@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local servers = {
+local initial_servers = {
 	"sumneko_lua",
 	"cssls",
 	"html",
@@ -13,9 +13,18 @@ local servers = {
 	"jsonls",
 	"yamlls",
 	"intelephense",
+	"marksman",
 }
 
 lsp_installer.setup()
+
+local installed_servers = lsp_installer.get_installed_servers()
+
+local server_names = {}
+
+for _, server in pairs(installed_servers) do
+	table.insert(server_names, server.name)
+end
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -24,7 +33,7 @@ end
 
 local opts = {}
 
-for _, server in pairs(servers) do
+for _, server in pairs(server_names) do
 	opts = {
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").capabilities,
