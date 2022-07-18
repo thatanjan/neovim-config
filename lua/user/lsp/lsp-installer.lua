@@ -16,7 +16,9 @@ local initial_servers = {
 	"marksman",
 }
 
-lsp_installer.setup()
+lsp_installer.setup({
+	ensure_installed = initial_servers,
+})
 
 local installed_servers = lsp_installer.get_installed_servers()
 
