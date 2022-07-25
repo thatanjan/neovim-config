@@ -103,6 +103,10 @@ local mappings = {
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 		F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 		P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+		g = {
+			name = "Telescope with Git",
+			s = { "<cmd>Telescope git_status<cr>", "Git Status" },
+		},
 	},
 
 	w = {
