@@ -126,6 +126,11 @@ return packer.startup(function(use)
 		run = "cd app && yarn install",
 	})
 
+	-- For Neovim with editor config
+	use({
+		"gpanders/editorconfig.nvim",
+	})
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
