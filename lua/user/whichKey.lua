@@ -81,7 +81,10 @@ local opts = {
 local mappings = {
 	a = { "<cmd>Alpha<cr>", "Alpha" },
 	e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+	c = {
+		name = "Config",
+		r = { "<cmd>luafile ~/linux-config/nvim/.config/nvim/init.lua<cr>", "Reload Config" },
+	},
 	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
 
 	f = {
