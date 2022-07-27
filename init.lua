@@ -1,26 +1,33 @@
-require("user.options")
-require("user.plugins")
-require("user.autocommands")
-require("user.colorscheme")
-require("user.cmp")
-require("user.telescope")
-require("user.treesitter")
-require("user.autopairs")
-require("user.comment")
-require("user.gitsigns")
-require("user.nvim-tree")
-require("user.bufferline")
-require("user.lualine")
-require("user.toggleterm")
-require("user.project")
-require("user.impatient")
-require("user.illuminate")
-require("user.indentline")
-require("user.alpha")
-require("user.lsp")
-require("user.dap")
-require("user.whichKey")
-require("user.copilot")
-require("user.trouble")
-require("user.emmet")
-require("user.keymaps")
+local modules = {
+	"user.options",
+	"user.keymaps",
+	"user.plugins",
+	"user.autocommands",
+	"user.colorscheme",
+	"user.cmp",
+	"user.telescope",
+	"user.treesitter",
+	"user.autopairs",
+	"user.comment",
+	"user.gitsigns",
+	"user.nvim-tree",
+	"user.bufferline",
+	"user.lualine",
+	"user.toggleterm",
+	"user.project",
+	"user.impatient",
+	"user.illuminate",
+	"user.indentline",
+	"user.alpha",
+	"user.lsp",
+	"user.dap",
+	"user.whichKey",
+	"user.copilot",
+	"user.trouble",
+	"user.emmet",
+}
+
+for _, v in pairs(modules) do
+	package.loaded[v] = nil
+	require(v)
+end
