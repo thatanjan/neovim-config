@@ -4,12 +4,10 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 
 --Remap space as leader key
-keymap("n", "<Space>", "<Nop>", {
-	silent = true,
-	noremap = true,
-})
+keymap("", "<Space>", "<Nop>", opts)
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = "n",
