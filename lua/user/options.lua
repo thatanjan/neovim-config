@@ -45,7 +45,7 @@ vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
-
+vim.cmd([[ autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll ]])
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
