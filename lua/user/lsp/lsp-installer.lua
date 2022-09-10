@@ -2,7 +2,6 @@ local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then
 	return
 end
-
 local initial_servers = {
 	"sumneko_lua",
 	"cssls",
@@ -14,6 +13,8 @@ local initial_servers = {
 	"yamlls",
 	"intelephense",
 	"marksman",
+	"eslint",
+	"sqls",
 }
 
 lsp_installer.setup({
@@ -59,6 +60,11 @@ for _, server in pairs(server_names) do
 	if server == "intelephense" then
 		local intelephense_opts = require("user.lsp.settings.intelephense")
 		opts = vim.tbl_deep_extend("force", intelephense_opts, opts)
+	end
+
+	if server == "sqls" then
+		local sqls_opts = require("user.lsp.settings.sqls")
+		opts = vim.tbl_deep_extend("force", sqls_opts, opts)
 	end
 
 	lspconfig[server].setup(opts)

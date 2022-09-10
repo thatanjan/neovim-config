@@ -46,35 +46,35 @@ null_ls.setup({
 	debug = true,
 	sources = {
 		formatting.prettier.with({
-			extra_args = {
-				"--no-semi",
-				"--single-quote",
-				"--jsx-single-quote",
-				"--arrow-parens",
-				"avoid",
-				"--use-tabs",
-				"--tab-width",
-				"4",
-			},
-			filetypes = {
-				"javascript",
-				"javascriptreact",
-				"typescript",
-				"typescriptreact",
-				"vue",
-				"css",
-				"scss",
-				"less",
-				"html",
-				"json",
-				"yaml",
-				"markdown",
-				"graphql",
-			},
+			--[[ extra_args = { ]]
+			--[[ 	"--no-semi", ]]
+			--[[ "--single-quote", ]]
+			--[[ "--jsx-single-quote", ]]
+			--[[ "--arrow-parens", ]]
+			--[[ "avoid", ]]
+			--[[ "--use-tabs", ]]
+			--[[ "--tab-width", ]]
+			--[[ "4", ]]
+			--[[ }, ]]
+			--[[ filetypes = { ]]
+			--[[ 	"javascript", ]]
+			--[[ 	"javascriptreact", ]]
+			--[[ 	"typescript", ]]
+			--[[ 	"typescriptreact", ]]
+			--[[ 	"vue", ]]
+			--[[ 	"css", ]]
+			--[[ 	"scss", ]]
+			--[[ 	"less", ]]
+			--[[ 	"html", ]]
+			--[[ 	"json", ]]
+			--[[ 	"yaml", ]]
+			--[[ 	"markdown", ]]
+			--[[ 	"graphql", ]]
+			--[[ }, ]]
 		}),
+		--[[ formatting.eslint, ]]
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-		formatting.google_java_format,
 		diagnostics.flake8,
 		formatting.phpcbf,
 	},
