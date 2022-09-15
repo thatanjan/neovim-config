@@ -25,6 +25,7 @@ local modules = {
 	"user.copilot",
 	"user.trouble",
 	"user.emmet",
+	"user.formatter",
 }
 
 for _, v in pairs(modules) do
