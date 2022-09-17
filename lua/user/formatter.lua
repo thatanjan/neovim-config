@@ -77,8 +77,8 @@ formatter.setup({
 				}
 			end,
 		},
-		typescript = prettierConfig,
-		typescriptreact = prettierConfig,
+		--[[ typescript = prettierConfig, ]]
+		--[[ typescriptreact = prettierConfig, ]]
 		css = {
 			require("formatter.filetypes.css").prettier,
 		},
@@ -92,8 +92,8 @@ formatter.setup({
 				}
 			end,
 		},
-		javascript = prettierConfig,
-		javascriptreact = prettierConfig,
+		--[[ javascript = prettierConfig, ]]
+		--[[ javascriptreact = prettierConfig, ]]
 		json = {
 			function()
 				return {
