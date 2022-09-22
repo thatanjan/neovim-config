@@ -126,6 +126,21 @@ formatter.setup({
 				}
 			end,
 		},
+		prisma = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+						"--use-tabs",
+						"--tab-width",
+						"4",
+					},
+					stdin = true,
+				}
+			end,
+		},
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
