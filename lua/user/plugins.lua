@@ -132,6 +132,12 @@ return packer.startup(function(use)
 		"gpanders/editorconfig.nvim",
 	})
 
+	-- For SQL lsp
+	use("nanotee/sqls.nvim")
+
+	-- For Prisma
+	use("pantharshit00/vim-prisma")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

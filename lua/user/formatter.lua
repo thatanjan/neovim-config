@@ -17,6 +17,14 @@ local prettierConfig = {
 				exe = "prettier",
 				args = {
 					"--stdin-filepath",
+					"--no-semi",
+					"--single-quote",
+					"--jsx-single-quote",
+					"--arrow-parens",
+					"avoid",
+					"--use-tabs",
+					"--tab-width",
+					"1",
 					util.escape_path(util.get_current_buffer_file_path()),
 				},
 				stdin = true,
@@ -28,6 +36,14 @@ local prettierConfig = {
 			exe = "prettier",
 			args = {
 				"--stdin-filepath",
+				"--no-semi",
+				"--single-quote",
+				"--jsx-single-quote",
+				"--arrow-parens",
+				"avoid",
+				"--use-tabs",
+				"--tab-width",
+				"1",
 				util.escape_path(util.get_current_buffer_file_path()),
 				"--parser",
 				parser,
@@ -98,7 +114,29 @@ formatter.setup({
 			function()
 				return {
 					exe = "prettier",
-					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--double-quote" },
+					args = {
+						"--stdin-filepath",
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+						"--double-quote",
+						"--use-tabs",
+						"--tab-width",
+						"1",
+					},
+					stdin = true,
+				}
+			end,
+		},
+		prisma = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+						"--use-tabs",
+						"--tab-width",
+						"4",
+					},
 					stdin = true,
 				}
 			end,
