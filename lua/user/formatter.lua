@@ -118,9 +118,6 @@ formatter.setup({
 						"--stdin-filepath",
 						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
 						"--double-quote",
-						"--use-tabs",
-						"--tab-width",
-						"1",
 					},
 					stdin = true,
 				}
