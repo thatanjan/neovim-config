@@ -138,6 +138,12 @@ return packer.startup(function(use)
 	-- For Prisma
 	use("pantharshit00/vim-prisma")
 
+    --For Todo nvim
+use {
+  "folke/todo-comments.nvim",
+  requires = "nvim-lua/plenary.nvim",
+}
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
