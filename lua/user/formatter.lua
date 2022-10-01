@@ -138,6 +138,14 @@ formatter.setup({
 				}
 			end,
 		},
+		php = {
+			require("formatter.filetypes.php").phpcbf,
+			function()
+				return {
+					exe = "phpcbf",
+				}
+			end,
+		},
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
