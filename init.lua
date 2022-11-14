@@ -28,6 +28,7 @@ local modules = {
 	"user.formatter",
 	"user.todo",
 	"user.renamer",
+	"user.lightbulb",
 }
 
 for _, v in pairs(modules) do

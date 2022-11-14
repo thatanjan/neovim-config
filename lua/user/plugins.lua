@@ -151,6 +151,11 @@ return packer.startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+	-- For Code action prompt
+	use({
+		"kosayoda/nvim-lightbulb",
+		--[[ requires = "antoinemadec/FixCursorHold.nvim", ]]
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
