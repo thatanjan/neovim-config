@@ -138,11 +138,18 @@ return packer.startup(function(use)
 	-- For Prisma
 	use("pantharshit00/vim-prisma")
 
-    --For Todo nvim
-use {
-  "folke/todo-comments.nvim",
-  requires = "nvim-lua/plenary.nvim",
-}
+	--For Todo nvim
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	})
+
+	-- For Rename
+	use({
+		"filipdutescu/renamer.nvim",
+		branch = "master",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
