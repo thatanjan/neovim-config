@@ -62,10 +62,5 @@ for _, server in pairs(server_names) do
 		opts = vim.tbl_deep_extend("force", intelephense_opts, opts)
 	end
 
-	if server == "sqls" then
-		local sqls_opts = require("user.lsp.settings.sqls")
-		opts = vim.tbl_deep_extend("force", sqls_opts, opts)
-	end
-
 	lspconfig[server].setup(opts)
 end
