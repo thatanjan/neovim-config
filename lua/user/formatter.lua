@@ -93,8 +93,8 @@ formatter.setup({
 				}
 			end,
 		},
-		--[[ typescript = prettierConfig, ]]
-		--[[ typescriptreact = prettierConfig, ]]
+		typescript = prettierConfig,
+		typescriptreact = prettierConfig,
 		css = {
 			require("formatter.filetypes.css").prettier,
 		},
