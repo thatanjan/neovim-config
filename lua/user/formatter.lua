@@ -8,6 +8,12 @@ if not status_ok_util then
   return
 end
 
+function starts_with(str, start)
+  return str:sub(1, #start) == start
+end
+
+local is_in_droppe = starts_with(util.get_current_buffer_file_dir(), "/home/anjan/git_projects/droppe-one/frontend")
+
 local prettierConfig = {
   require("formatter.filetypes.typescript").prettier,
 
@@ -37,6 +43,8 @@ local prettierConfig = {
     }
   end,
 }
+
+local js_config = (is_in_droppe and {}) or prettierConfig
 
 -- Utilities for creating configurations
 
@@ -77,8 +85,6 @@ formatter.setup {
         }
       end,
     },
-    --[[ typescript = prettierConfig, ]]
-    --[[ typescriptreact = prettierConfig, ]]
     css = {
       require("formatter.filetypes.css").prettier,
     },
@@ -92,8 +98,10 @@ formatter.setup {
         }
       end,
     },
-    --[[ javascript = prettierConfig, ]]
-    --[[ javascriptreact = prettierConfig, ]]
+    javascript = js_config,
+    javascriptreact = js_config,
+    typescript = js_config,
+    typescriptreact = js_config,
     json = {
       function()
         return {
