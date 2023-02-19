@@ -8,7 +8,7 @@ if not status_ok_util then
   return
 end
 
-function starts_with(str, start)
+local function starts_with(str, start)
   return str:sub(1, #start) == start
 end
 
@@ -143,6 +143,9 @@ formatter.setup {
     },
     sh = {
       require("formatter.filetypes.sh").shfmt,
+    },
+    python = {
+      require("formatter.filetypes.python").autopep8,
     },
 
     -- Use the special "*" filetype for defining formatter configurations on
