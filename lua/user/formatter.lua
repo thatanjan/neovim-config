@@ -24,6 +24,7 @@ local prettierConfig = {
         args = {
           "--stdin-filepath",
           util.escape_path(util.get_current_buffer_file_path()),
+          "--use-tabs",
         },
         stdin = true,
         try_node_modules = true,
@@ -35,6 +36,7 @@ local prettierConfig = {
       args = {
         "--stdin-filepath",
         util.escape_path(util.get_current_buffer_file_path()),
+        "--use-tabs",
         "--parser",
         parser,
       },
