@@ -83,7 +83,7 @@ local mappings = {
     e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     c = {
         name = "Config",
-        r = { "<cmd>luafile ~/.config/nvim/init.lua<cr>", "Reload Config" },
+        r = { "<cmd>lua dofile(vim.fn.stdpath('config') .. '/init.lua')<cr>", "Reload Config" },
     },
     h = { "<cmd>nohlsearch<CR>", "No Highlight" },
 
