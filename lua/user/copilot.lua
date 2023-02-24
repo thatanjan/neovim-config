@@ -6,7 +6,7 @@ vim.g.copilot_filetypes = { xml = false, markdown = true, markdownjsx = true }
 -- vim.g.copilot_filetypes = { ["*"] = false, python = true }
 
 vim.g.copilot_no_tab_map = true
-vim.cmd([[imap <silent><script><expr> <A-j> copilot#Accept("\<CR>")]])
+vim.cmd [[imap <silent><script><expr> <A-j> copilot#Accept("\<CR>")]]
 
 -- vim.keymap.set("i", "<leader>j", "copilot#Accept('\\<CR>')<CR>", { silent = true })
 
@@ -21,4 +21,4 @@ vim.cmd([[imap <silent><script><expr> <A-j> copilot#Accept("\<CR>")]])
 -- <M-[>                   Cycle to the previous suggestion.
 -- <Plug>(copilot-previous)
 
-vim.cmd([[highlight CopilotSuggestion guifg=#555555 ctermfg=8]])
+vim.cmd [[highlight CopilotSuggestion guifg=#555555 ctermfg=8]]
