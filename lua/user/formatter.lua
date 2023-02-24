@@ -12,7 +12,7 @@ local function starts_with(str, start)
     return str:sub(1, #start) == start
 end
 
-local is_in_droppe = starts_with(util.get_current_buffer_file_dir(), "/home/anjan/git_projects/droppe-one/frontend")
+local is_in_droppe = starts_with(vim.loop.cwd(), "/home/anjan/git_projects/droppe-one/frontend")
 
 local prettierConfig = {
     require("formatter.filetypes.typescript").prettier,
