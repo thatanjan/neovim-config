@@ -1,4 +1,9 @@
-return {
+local status_ok, todo_comments = pcall(require, "todo-comments")
+if not status_ok then
+    return
+end
+
+local config = {
     signs = true, -- show icons in the signs column
     sign_priority = 8, -- sign priority
     -- keywords recognized as todo comments
@@ -62,3 +67,5 @@ return {
         -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
     },
 }
+
+todo_comments.setup(config)
