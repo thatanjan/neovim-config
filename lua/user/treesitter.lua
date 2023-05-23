@@ -4,7 +4,17 @@ if not status_ok then
 end
 
 configs.setup {
-    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "javascript" }, -- put the language you want in this array
+    ensure_installed = {
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "bash",
+        "python",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+    }, -- put the language you want in this array
     ignore_install = { "" }, -- List of parsers to ignore installing
     highlight = {
         enable = true, -- false will disable the whole extension
