@@ -66,6 +66,9 @@ return packer.startup(function(use)
     use { "morhetz/gruvbox" }
     use { "nanotech/jellybeans.vim" }
 
+    use "AlexvZyl/nordic.nvim"
+    use "shaunsingh/nord.nvim"
+
     -- cmp plugins
     use { "hrsh7th/nvim-cmp" } -- The completion plugin
     use { "hrsh7th/cmp-buffer" } -- buffer completions
@@ -109,7 +112,7 @@ return packer.startup(function(use)
     use { "folke/which-key.nvim" }
 
     -- Copilot
-    use { "github/copilot.vim" }
+    -- use { "github/copilot.vim" }
 
     -- MDX
     use "findango/vim-mdx"
