@@ -31,6 +31,7 @@ local modules = {
     "user.lightbulb",
     "user.colorizer",
     "user.nvim-ufo",
+    "user.barbecue",
 }
 
 if vim.g.neovide then
