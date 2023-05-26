@@ -88,6 +88,18 @@ return packer.startup(function(use)
         "neovim/nvim-lspconfig",
     }
 
+    use {
+        "glepnir/lspsaga.nvim",
+        opt = true,
+        branch = "main",
+        event = "LspAttach",
+        requires = {
+            { "nvim-tree/nvim-web-devicons" },
+            --Please make sure you install markdown and markdown_inline parser
+            { "nvim-treesitter/nvim-treesitter" },
+        },
+    }
+
     use { "mhartington/formatter.nvim" }
     use { "RRethy/vim-illuminate" }
 
