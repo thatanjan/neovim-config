@@ -3,6 +3,11 @@ if not status_ok then
     return
 end
 
+local status_ok, builtin = pcall(require, "telescope.builtin")
+if not status_ok then
+    return
+end
+
 function makeCommand(command)
     local finalCommand = "<cmd> " .. command .. " <CR>"
     return finalCommand
@@ -163,14 +168,24 @@ local mappings = {
 
     l = {
         name = "LSP",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        a = { "<cmd>Lspsaga code_action<cr>", "Code Actions" },
         d = {
-            "<cmd>Telescope lsp_document_diagnostics<cr>",
-            "Document Diagnostics",
+            function()
+                builtin.diagnostics { bufnr = 0 }
+            end,
+            "Document Diagnostics with Telescope",
+        },
+        D = {
+            makeCommand "Trouble document_diagnostics",
+            "Document Diagnostics with Trouble",
         },
         w = {
-            "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+            builtin.diagnostics,
             "Workspace Diagnostics",
+        },
+        W = {
+            makeCommand "Trouble workspace_diagnostics",
+            "Workspace Diagnostics with Trouble",
         },
         f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
         i = { "<cmd>LspInfo<cr>", "Info" },
