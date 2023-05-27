@@ -3,6 +3,11 @@ if not status_ok then
     return
 end
 
+function makeCommand(command)
+    local finalCommand = "<cmd> " .. command .. " <CR>"
+    return finalCommand
+end
+
 local setup = {
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
