@@ -213,6 +213,14 @@ local mappings = {
             makeCommand "Lspsaga peek_type_definition",
             "Peek type Definition",
         },
+        f = {
+            makeCommand "Lspsaga lsp_finder",
+            "Lsp finder",
+        },
+        F = {
+            makeCommand "Telescope lsp_references",
+            "Reference with Telescope",
+        },
     },
 
     t = {
