@@ -91,13 +91,13 @@ local opts = {
 }
 
 local mappings = {
-    a = { "<cmd>Alpha<cr>", "Alpha" },
-    e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    a = { makeCommand "Alpha", "Alpha" },
+    e = { makeCommand "NvimTreeToggle", "Explorer" },
     c = {
         name = "Config",
-        r = { "<cmd>lua dofile(vim.fn.stdpath('config') .. '/init.lua')<cr>", "Reload Config" },
+        r = { makeCommand "lua dofile(vim.fn.stdpath('config') .. '/init.lua')", "Reload Config" },
     },
-    h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    h = { makeCommand "nohlsearch", "No Highlight" },
 
     f = {
         name = "Telescope Find",
@@ -118,6 +118,7 @@ local mappings = {
         C = { makeCommand "Telescope commands", "Commands" },
         F = { makeCommand "Telescope live_grep theme=ivy", "Find Text" },
         P = { makeCommand "Telescope projects", "Projects" },
+        t = { makeCommand "Telescope current_buffer_fuzzy_find", "Find text on current buffer" },
     },
 
     w = {
