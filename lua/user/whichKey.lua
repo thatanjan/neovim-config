@@ -3,15 +3,17 @@ if not status_ok then
     return
 end
 
-local status_ok, builtin = pcall(require, "telescope.builtin")
-if not status_ok then
-    return
-end
+local makeCommand = require("user.utils").makeCommand
 
-function makeCommand(command)
-    local finalCommand = "<cmd> " .. command .. " <CR>"
-    return finalCommand
-end
+local builtin = require "telescope.builtin"
+local telescopeThemes = require "telescope.themes"
+
+local dropdown_without_preview = telescopeThemes.get_dropdown { previewer = false }
+
+-- function makeCommand(command)
+--     local finalCommand = "<cmd> " .. command .. " <CR>"
+--     return finalCommand
+-- end
 
 local setup = {
     plugins = {
@@ -100,26 +102,22 @@ local mappings = {
     f = {
         name = "Telescope Find",
         b = {
-            "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+            makeCommand "Telescope buffers theme=dropdown previewer=false",
             "Buffers",
         },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        c = { makeCommand "Telescope colorscheme", "Colorscheme" },
         f = {
-            "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+            makeCommand "Telescope find_files theme=dropdown previewer=false",
             "Find files",
         },
-        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-        M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-        R = { "<cmd>Telescope registers<cr>", "Registers" },
-        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        C = { "<cmd>Telescope commands<cr>", "Commands" },
-        F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-        P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-        g = {
-            name = "Telescope with Git",
-            s = { "<cmd>Telescope git_status<cr>", "Git Status" },
-        },
+        h = { makeCommand "Telescope help_tags", "Find Help" },
+        M = { makeCommand "Telescope man_pages", "Man Pages" },
+        r = { makeCommand "Telescope oldfiles", "Open Recent File" },
+        k = { makeCommand "Telescope keymaps", "Keymaps" },
+        R = { makeCommand "Telescope registers", "Registers" },
+        C = { makeCommand "Telescope commands", "Commands" },
+        F = { makeCommand "Telescope live_grep theme=ivy", "Find Text" },
+        P = { makeCommand "Telescope projects", "Projects" },
     },
 
     w = {
@@ -168,43 +166,52 @@ local mappings = {
 
     l = {
         name = "LSP",
-        a = { "<cmd>Lspsaga code_action<cr>", "Code Actions" },
+        a = { makeCommand "Lspsaga code_action", "Code Actions" },
+
+        D = { makeCommand "Telescope diagnostics bufnr=0", "Document Diagnostics with Telescope" },
         d = {
-            function()
-                builtin.diagnostics { bufnr = 0 }
-            end,
-            "Document Diagnostics with Telescope",
-        },
-        D = {
             makeCommand "Trouble document_diagnostics",
             "Document Diagnostics with Trouble",
         },
-        w = {
-            builtin.diagnostics,
+
+        W = {
+            makeCommand "Telescope diagnostics",
             "Workspace Diagnostics",
         },
-        W = {
+        w = {
             makeCommand "Trouble workspace_diagnostics",
             "Workspace Diagnostics with Trouble",
         },
-        f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-        i = { "<cmd>LspInfo<cr>", "Info" },
-        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+
         j = {
-            "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+            makeCommand "Lspsaga diagnostic_jump_next",
             "Next Diagnostic",
         },
         k = {
-            "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+            makeCommand "Lspsaga diagnostic_jump_prev",
             "Prev Diagnostic",
         },
+
         l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-        q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-        r = { "<cmd>lua require('renamer').rename()<cr>", "Rename" },
-        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+
+        q = { makeCommand "Telescope loclist", "Quickfix with Telescope" },
+        Q = { makeCommand "Trouble loclist", "Quickfix with Trouble" },
+
+        e = { makeCommand "Lspsaga rename", "Rename" },
+
+        s = { makeCommand "Telescope lsp_document_symbols", "Document Symbols" },
         S = {
-            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+            makeCommand "Telescope lsp_dynamic_workspace_symbols",
             "Workspace Symbols",
+        },
+
+        p = {
+            makeCommand "Lspsaga peek_definition",
+            "Peek Definition",
+        },
+        P = {
+            makeCommand "Lspsaga peek_type_definition",
+            "Peek type Definition",
         },
     },
 
