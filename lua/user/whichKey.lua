@@ -169,19 +169,11 @@ local mappings = {
         name = "LSP",
         a = { makeCommand "Lspsaga code_action", "Code Actions" },
 
-        D = { makeCommand "Telescope diagnostics bufnr=0", "Document Diagnostics with Telescope" },
-        d = {
-            makeCommand "Trouble document_diagnostics",
-            "Document Diagnostics with Trouble",
-        },
+        d = { makeCommand "Telescope diagnostics bufnr=0", "Document Diagnostics with Telescope" },
 
-        W = {
+        w = {
             makeCommand "Telescope diagnostics",
             "Workspace Diagnostics",
-        },
-        w = {
-            makeCommand "Trouble workspace_diagnostics",
-            "Workspace Diagnostics with Trouble",
         },
 
         j = {
@@ -198,7 +190,7 @@ local mappings = {
         q = { makeCommand "Telescope loclist", "Quickfix with Telescope" },
         Q = { makeCommand "Trouble loclist", "Quickfix with Trouble" },
 
-        e = { makeCommand "Lspsaga rename", "Rename" },
+        r = { makeCommand "Lspsaga rename", "Rename" },
 
         s = { makeCommand "Telescope lsp_document_symbols", "Document Symbols" },
         S = {
@@ -222,10 +214,23 @@ local mappings = {
             makeCommand "Telescope lsp_references",
             "Reference with Telescope",
         },
+
+        o = {
+            makeCommand "Lspsaga outline",
+            "Symbols outline",
+        },
     },
 
     t = {
         name = "Trouble",
+        w = {
+            makeCommand "Trouble workspace_diagnostics",
+            "Workspace Diagnostics with Trouble",
+        },
+        d = {
+            makeCommand "Trouble document_diagnostics",
+            "Document Diagnostics with Trouble",
+        },
         r = {
             makeCommand "Trouble lsp_references",
             "LSP Reference",
@@ -234,7 +239,7 @@ local mappings = {
             makeCommand "Trouble quickfix",
             "Quickfix ",
         },
-        v = { makeCommand "ToggleTerm size=80 direction=horizontal", "horizontal" }, -- Exception
+        h = { makeCommand "ToggleTerm size=80 direction=horizontal", "horizontal" }, -- Exception
     },
 }
 
