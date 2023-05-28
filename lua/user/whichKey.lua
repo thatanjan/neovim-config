@@ -191,6 +191,7 @@ local mappings = {
         Q = { makeCommand "Trouble loclist", "Quickfix with Trouble" },
 
         r = { makeCommand "Lspsaga rename", "Rename" },
+        R = { makeCommand "Lspsaga rename ++project", "Rename in workspace" },
 
         s = { makeCommand "Telescope lsp_document_symbols", "Document Symbols" },
         S = {
