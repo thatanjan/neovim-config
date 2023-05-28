@@ -144,14 +144,14 @@ local mappings = {
 
     g = {
         name = "Git",
-        g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-        j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-        k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-        l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-        p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+        g = { makeCommand "lua _LAZYGIT_TOGGLE()", "Lazygit" },
+        j = { makeCommand "lua require 'gitsigns'.next_hunk()", "Next Hunk" },
+        k = { makeCommand "lua require 'gitsigns'.prev_hunk()", "Prev Hunk" },
+        l = { makeCommand "lua require 'gitsigns'.blame_line()", "Blame" },
+        p = { makeCommand "lua require 'gitsigns'.preview_hunk()", "Preview Hunk" },
+        r = { makeCommand "lua require 'gitsigns'.reset_hunk()", "Reset Hunk" },
+        R = { makeCommand "lua require 'gitsigns'.reset_buffer()", "Reset Buffer" },
+        s = { makeCommand "lua require 'gitsigns'.stage_hunk()", "Stage Hunk" },
         u = {
             "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
             "Undo Stage Hunk",
@@ -160,7 +160,7 @@ local mappings = {
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
         c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
         d = {
-            "<cmd>Gitsigns diffthis HEAD<cr>",
+            makeCommand "Gitsigns diffthis HEAD",
             "Diff",
         },
     },
