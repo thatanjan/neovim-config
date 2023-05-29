@@ -66,6 +66,9 @@ return packer.startup(function(use)
     use { "morhetz/gruvbox" }
     use { "nanotech/jellybeans.vim" }
 
+    use "AlexvZyl/nordic.nvim"
+    use "shaunsingh/nord.nvim"
+
     -- cmp plugins
     use { "hrsh7th/nvim-cmp" } -- The completion plugin
     use { "hrsh7th/cmp-buffer" } -- buffer completions
@@ -83,6 +86,18 @@ return packer.startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
+    }
+
+    use {
+        "glepnir/lspsaga.nvim",
+        opt = true,
+        branch = "main",
+        event = "LspAttach",
+        requires = {
+            { "nvim-tree/nvim-web-devicons" },
+            --Please make sure you install markdown and markdown_inline parser
+            { "nvim-treesitter/nvim-treesitter" },
+        },
     }
 
     use { "mhartington/formatter.nvim" }
@@ -109,7 +124,7 @@ return packer.startup(function(use)
     use { "folke/which-key.nvim" }
 
     -- Copilot
-    use { "github/copilot.vim" }
+    -- use { "github/copilot.vim" }
 
     -- MDX
     use "findango/vim-mdx"
@@ -168,8 +183,16 @@ return packer.startup(function(use)
         "norcalli/nvim-colorizer.lua",
     }
 
+    -- For Foldings
+    use { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }
+
     use {
-        "xiyaowong/nvim-transparent",
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
