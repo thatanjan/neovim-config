@@ -33,6 +33,7 @@ local modules = {
     "user.nvim-ufo",
     "user.barbecue",
     "user.lspsaga",
+    "user.typescript",
 }
 
 if vim.g.neovide then

@@ -220,6 +220,19 @@ local mappings = {
             makeCommand "Lspsaga outline",
             "Symbols outline",
         },
+
+        -- All related to typescript.nvim plugins
+        t = {
+            name = "Typescript LSP",
+            i = {
+                makeCommand "TypescriptAddMissingImports",
+                "Add all the missing imports",
+            },
+            r = {
+                makeCommand "TypescriptRemoveUnused",
+                "Remove all unused variables",
+            },
+        },
     },
 
     t = {

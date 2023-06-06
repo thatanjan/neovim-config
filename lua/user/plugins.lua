@@ -100,6 +100,8 @@ return packer.startup(function(use)
         },
     }
 
+    use "jose-elias-alvarez/typescript.nvim"
+
     use { "mhartington/formatter.nvim" }
     use { "RRethy/vim-illuminate" }
 
