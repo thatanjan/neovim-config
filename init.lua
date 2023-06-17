@@ -32,6 +32,7 @@ local modules = {
     "user.colorizer",
     "user.nvim-ufo",
     "user.lspsaga",
+    "user.nvim-lint",
 }
 
 if vim.g.neovide then

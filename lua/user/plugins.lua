@@ -100,6 +100,9 @@ return packer.startup(function(use)
         },
     }
 
+    -- For Linting
+    use "mfussenegger/nvim-lint"
+
     use { "mhartington/formatter.nvim" }
     use { "RRethy/vim-illuminate" }
 
