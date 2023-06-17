@@ -31,7 +31,6 @@ local modules = {
     "user.lightbulb",
     "user.colorizer",
     "user.nvim-ufo",
-    "user.barbecue",
     "user.lspsaga",
 }
 

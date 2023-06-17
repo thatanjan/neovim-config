@@ -186,15 +186,6 @@ return packer.startup(function(use)
     -- For Foldings
     use { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }
 
-    use {
-        "utilyre/barbecue.nvim",
-        tag = "*",
-        requires = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons", -- optional dependency
-        },
-    }
-
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
