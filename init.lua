@@ -33,6 +33,7 @@ local modules = {
     "user.nvim-ufo",
     "user.lspsaga",
     "user.nvim-lint",
+    "user.undotree",
 }
 
 if vim.g.neovide then
