@@ -152,6 +152,9 @@ formatter.setup {
         sh = {
             require("formatter.filetypes.sh").shfmt,
         },
+        yaml = {
+            require("formatter.filetypes.yaml").prettier,
+        },
         python = {
             require("formatter.filetypes.python").autopep8,
         },
