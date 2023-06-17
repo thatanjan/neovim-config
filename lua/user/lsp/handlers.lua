@@ -16,7 +16,6 @@ M.capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true,
 }
 
-
 M.setup = function()
     local signs = {
         { name = "DiagnosticSignError", text = "" },
