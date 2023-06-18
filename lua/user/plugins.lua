@@ -205,6 +205,25 @@ return packer.startup(function(use)
     use "mbbill/undotree"
 
     use { "Wansmer/treesj", requires = { "nvim-treesitter" } }
+
+    use {
+        "SmiteshP/nvim-navbuddy",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+            "numToStr/Comment.nvim", -- Optional
+            "nvim-telescope/telescope.nvim", -- Optional
+        },
+        config = function()
+            require("nvim-navbuddy").setup {
+                lsp = {
+                    auto_attach = true, -- If set to true, you don't need to manually use attach function
+                },
+            }
+        end,
+    }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
