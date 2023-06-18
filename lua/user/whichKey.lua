@@ -242,6 +242,22 @@ local mappings = {
         },
         h = { makeCommand "ToggleTerm size=80 direction=horizontal", "horizontal" }, -- Exception
     },
+
+    s = {
+        name = "Session",
+        S = {
+            makeCommand "SSave",
+            "Save the session",
+        },
+        s = {
+            makeCommand "SSave!",
+            "Save the current session",
+        },
+        f = {
+            makeCommand "Telescope possession list",
+            "Get all the sessions",
+        },
+    },
 }
 
 which_key.setup(setup)

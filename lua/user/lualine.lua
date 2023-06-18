@@ -3,6 +3,11 @@ if not status_ok then
     return
 end
 
+-- For possession.nvim plugin
+local function get_session_name()
+    return require("possession.session").session_name or ""
+end
+
 local hide_in_width = function()
     return vim.fn.winwidth(0) > 80
 end
@@ -50,7 +55,8 @@ lualine.setup {
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
-        lualine_c = { diagnostics },
+        lualine_c = { get_session_name },
+        lualine_d = { diagnostics },
         lualine_x = { diff, spaces, "encoding", filetype },
         lualine_y = { location },
         lualine_z = { "progress" },

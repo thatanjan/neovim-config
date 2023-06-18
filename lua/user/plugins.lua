@@ -204,7 +204,13 @@ return packer.startup(function(use)
 
     use "mbbill/undotree"
 
-    use { "Wansmer/treesj", requires = { "nvim-treesitter" } }
+    use {
+        "Wansmer/treesj",
+        requires = { "nvim-treesitter" },
+        config = function()
+            require("treesj").setup {}
+        end,
+    }
 
     use {
         "SmiteshP/nvim-navbuddy",
@@ -221,6 +227,27 @@ return packer.startup(function(use)
                     auto_attach = true, -- If set to true, you don't need to manually use attach function
                 },
             }
+        end,
+    }
+
+    use {
+        "jedrzejboczar/possession.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("possession").setup {
+                autosave = {
+                    current = true,
+                },
+                plugins = { delete_hidden_buffers = false },
+                commands = {
+                    save = "SSave",
+                    load = "SLoad",
+                    delete = "SDelete",
+                    list = "SList",
+                },
+            }
+
+            require("telescope").load_extension "possession"
         end,
     }
 
