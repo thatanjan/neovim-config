@@ -61,3 +61,12 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
         require("lint").try_lint()
     end,
 })
+
+-- remember folds
+vim.cmd [[
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent! loadview
+augroup END
+]]
