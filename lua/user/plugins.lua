@@ -278,12 +278,14 @@ return packer.startup(function(use)
     }
 
     use {
-        "AlphaTechnolog/pywal.nvim",
-        as = "pywal",
-        config = function()
-            require("pywal").setup()
-        end,
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" },
+        },
     }
+
+    use { "AlphaTechnolog/pywal.nvim", as = "pywal" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
