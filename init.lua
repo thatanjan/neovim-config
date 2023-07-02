@@ -34,6 +34,7 @@ local modules = {
     "user.nvim-lint",
     "user.undotree",
     "user.refactoring",
+    "user.noice",
 }
 
 for _, v in pairs(modules) do
