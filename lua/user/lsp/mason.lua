@@ -45,6 +45,21 @@ mason_lspconfig.setup_handlers {
             opts = vim.tbl_deep_extend("force", conf_opts, opts)
         end
 
+        if server_name == "tsserver" then
+            -- Use the typescript.nvim plugin
+            require("typescript").setup {
+                disable_commands = false, -- prevent the plugin from creating Vim commands
+                debug = false, -- enable debug logging for commands
+                go_to_source_definition = {
+                    fallback = true, -- fall back to standard LSP definition on failure
+                },
+                server = { -- pass options to lspconfig's setup method
+                    on_attach = opts.on_attach,
+                },
+            }
+            return false
+        end
+
         require("lspconfig")[server_name].setup(opts)
     end,
 }

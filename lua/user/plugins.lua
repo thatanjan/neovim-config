@@ -100,6 +100,13 @@ return packer.startup(function(use)
         },
     }
 
+    use {
+        "jose-elias-alvarez/typescript.nvim",
+        config = function()
+            require("typescript").setup {}
+        end,
+    }
+
     -- For Linting
     use "mfussenegger/nvim-lint"
 
@@ -267,6 +274,14 @@ return packer.startup(function(use)
             }
 
             require("telescope").load_extension "possession"
+        end,
+    }
+
+    use {
+        "AlphaTechnolog/pywal.nvim",
+        as = "pywal",
+        config = function()
+            require("pywal").setup()
         end,
     }
 
