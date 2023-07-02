@@ -33,6 +33,7 @@ local modules = {
     "user.lspsaga",
     "user.nvim-lint",
     "user.undotree",
+    "user.refactoring",
 }
 
 for _, v in pairs(modules) do
