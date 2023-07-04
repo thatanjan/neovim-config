@@ -102,10 +102,9 @@ return packer.startup(function(use)
 
     use {
         "jose-elias-alvarez/typescript.nvim",
-        config = function()
-            require("typescript").setup {}
-        end,
     }
+
+    use "b0o/schemastore.nvim"
 
     -- For Linting
     use "mfussenegger/nvim-lint"
