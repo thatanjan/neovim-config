@@ -237,23 +237,23 @@ return packer.startup(function(use)
         end,
     }
 
-    use {
-        "SmiteshP/nvim-navbuddy",
-        requires = {
-            "neovim/nvim-lspconfig",
-            "SmiteshP/nvim-navic",
-            "MunifTanjim/nui.nvim",
-            "numToStr/Comment.nvim", -- Optional
-            "nvim-telescope/telescope.nvim", -- Optional
-        },
-        config = function()
-            require("nvim-navbuddy").setup {
-                lsp = {
-                    auto_attach = true, -- If set to true, you don't need to manually use attach function
-                },
-            }
-        end,
-    }
+    -- use {
+    --     "SmiteshP/nvim-navbuddy",
+    --     requires = {
+    --         "neovim/nvim-lspconfig",
+    --         "SmiteshP/nvim-navic",
+    --         "MunifTanjim/nui.nvim",
+    --         "numToStr/Comment.nvim", -- Optional
+    --         "nvim-telescope/telescope.nvim", -- Optional
+    --     },
+    --     -- config = function()
+    --     --     require("nvim-navbuddy").setup {
+    --     --         lsp = {
+    --     --             auto_attach = true, -- If set to true, you don't need to manually use attach function
+    --     --         },
+    --     --     }
+    --     -- end,
+    -- }
 
     use {
         "jedrzejboczar/possession.nvim",
