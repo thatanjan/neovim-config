@@ -107,7 +107,7 @@ local mappings = {
         },
         c = { makeCommand "Telescope colorscheme", "Colorscheme" },
         f = {
-            makeCommand "Telescope find_files theme=dropdown previewer=false",
+            makeCommand "Telescope find_files theme=dropdown previewer=false hidden=true",
             "Find files",
         },
         h = { makeCommand "Telescope help_tags", "Find Help" },
