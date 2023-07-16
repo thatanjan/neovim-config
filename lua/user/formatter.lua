@@ -133,6 +133,7 @@ formatter.setup {
                         "--use-tabs",
                         "--tab-width",
                         "4",
+                        "--plugin=prettier-plugin-prisma",
                     },
                     stdin = true,
                 }
