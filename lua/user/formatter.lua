@@ -111,17 +111,7 @@ formatter.setup {
         typescript = js_config,
         typescriptreact = js_config,
         json = {
-            function()
-                return {
-                    exe = "prettier",
-                    args = {
-                        "--stdin-filepath",
-                        vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
-                        "--double-quote",
-                    },
-                    stdin = true,
-                }
-            end,
+            require("formatter.filetypes.json").prettier,
         },
         prisma = {
             function()
