@@ -35,6 +35,7 @@ local modules = {
     "user.undotree",
     "user.refactoring",
     "user.noice",
+    "user.rainbow",
 }
 
 for _, v in pairs(modules) do
