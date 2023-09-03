@@ -48,10 +48,3 @@ vim.opt.iskeyword:append "-"
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
-vim.cmd [[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost * FormatWrite
-  autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
-augroup END
-]]
