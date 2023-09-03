@@ -76,6 +76,13 @@ M.on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
     end
 
+    if client.name == "eslint" then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+        })
+    end
+
     lsp_keymaps(bufnr)
     local status_ok, illuminate = pcall(require, "illuminate")
     if not status_ok then
