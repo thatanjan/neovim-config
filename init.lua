@@ -26,8 +26,6 @@ local modules = {
     "user.emmet",
     "user.formatter",
     "user.todo",
-    "user.renamer",
-    "user.lightbulb",
     "user.colorizer",
     "user.nvim-ufo",
     "user.lspsaga",

@@ -114,9 +114,6 @@ return packer.startup(function(use)
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter" }
 
-    -- Treesitter Plugins
-    -- use { "p00f/nvim-ts-rainbow" }
-
     -- Git
     use { "lewis6991/gitsigns.nvim" }
 
@@ -168,19 +165,6 @@ return packer.startup(function(use)
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
-    }
-
-    -- For Rename
-    use {
-        "filipdutescu/renamer.nvim",
-        branch = "master",
-        requires = { { "nvim-lua/plenary.nvim" } },
-    }
-
-    -- For Code action prompt
-    use {
-        "kosayoda/nvim-lightbulb",
-        --[[ requires = "antoinemadec/FixCursorHold.nvim", ]]
     }
 
     -- For previewing colors on code
