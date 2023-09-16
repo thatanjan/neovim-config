@@ -119,6 +119,7 @@ local mappings = {
         F = { makeCommand "Telescope live_grep theme=ivy", "Find Text" },
         P = { makeCommand "Telescope projects", "Projects" },
         t = { makeCommand "Telescope current_buffer_fuzzy_find", "Find text on current buffer" },
+        s = { makeCommand "Telescope luasnip", "Find snippets" },
     },
 
     w = {

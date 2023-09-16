@@ -111,6 +111,11 @@ return packer.startup(function(use)
     -- Telescope
     use { "nvim-telescope/telescope.nvim" }
 
+    -- Telescope plugsins
+    use {
+        "benfowler/telescope-luasnip.nvim",
+    }
+
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter" }
 
