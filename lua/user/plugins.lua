@@ -56,7 +56,13 @@ lazy.setup {
     { "mfussenegger/nvim-lint" },
     { "mhartington/formatter.nvim" },
     { "RRethy/vim-illuminate" },
+
+
+
+
     { "nvim-telescope/telescope.nvim" },
+    { "benfowler/telescope-luasnip.nvim"},
+
     { "nvim-treesitter/nvim-treesitter" },
     { "lewis6991/gitsigns.nvim" },
     { "mfussenegger/nvim-dap" },
