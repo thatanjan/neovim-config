@@ -155,4 +155,6 @@ lazy.setup {
             "debugloop/telescope-undo.nvim",
         },
     },
+
+    { "axelvc/template-string.nvim" },
 }
