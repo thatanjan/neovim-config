@@ -34,6 +34,7 @@ local modules = {
     "user.refactoring",
     "user.noice",
     "user.rainbow",
+    "user.notify",
 }
 
 for _, v in pairs(modules) do
