@@ -157,4 +157,8 @@ lazy.setup {
     },
 
     { "axelvc/template-string.nvim" },
+    {
+        "piersolenski/telescope-import.nvim",
+        requires = "nvim-telescope/telescope.nvim",
+    },
 }
