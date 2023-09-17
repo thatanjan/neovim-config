@@ -20,7 +20,11 @@ end
 
 lazy.setup {
     { "nvim-lua/plenary.nvim" },
-    { "windwp/nvim-autopairs" },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {}, -- this is equalent to setup({}) function
+    },
     { "numToStr/Comment.nvim" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "kyazdani42/nvim-web-devicons" },
@@ -57,11 +61,8 @@ lazy.setup {
     { "mhartington/formatter.nvim" },
     { "RRethy/vim-illuminate" },
 
-
-
-
     { "nvim-telescope/telescope.nvim" },
-    { "benfowler/telescope-luasnip.nvim"},
+    { "benfowler/telescope-luasnip.nvim" },
 
     { "nvim-treesitter/nvim-treesitter" },
     { "lewis6991/gitsigns.nvim" },
@@ -145,5 +146,13 @@ lazy.setup {
             }
             require("telescope").load_extension "possession"
         end,
+    },
+
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "debugloop/telescope-undo.nvim",
+        },
     },
 }
