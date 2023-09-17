@@ -221,6 +221,10 @@ local mappings = {
             makeCommand "Lspsaga outline",
             "Symbols outline",
         },
+        i = {
+            makeCommand "Telescope import",
+            "Find imports",
+        },
     },
 
     t = {

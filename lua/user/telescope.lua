@@ -24,3 +24,4 @@ telescope.setup {
 }
 
 telescope.load_extension "luasnip"
+telescope.load_extension "import"

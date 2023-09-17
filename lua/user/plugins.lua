@@ -57,11 +57,8 @@ lazy.setup {
     { "mhartington/formatter.nvim" },
     { "RRethy/vim-illuminate" },
 
-
-
-
     { "nvim-telescope/telescope.nvim" },
-    { "benfowler/telescope-luasnip.nvim"},
+    { "benfowler/telescope-luasnip.nvim" },
 
     { "nvim-treesitter/nvim-treesitter" },
     { "lewis6991/gitsigns.nvim" },
@@ -145,5 +142,10 @@ lazy.setup {
             }
             require("telescope").load_extension "possession"
         end,
+    },
+
+    {
+        "piersolenski/telescope-import.nvim",
+        requires = "nvim-telescope/telescope.nvim",
     },
 }
