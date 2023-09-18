@@ -161,4 +161,6 @@ lazy.setup {
         "piersolenski/telescope-import.nvim",
         requires = "nvim-telescope/telescope.nvim",
     },
+
+    require "user.flash",
 }
