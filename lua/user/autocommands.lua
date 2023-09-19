@@ -62,6 +62,18 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     end,
 })
 
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = {
+        "*.js",
+        "*.jsx",
+        "*.ts",
+        "*.tsx",
+    },
+    callback = function()
+        require("typescript").actions.addMissingImports()
+    end,
+})
+
 -- remember folds
 vim.cmd [[
 augroup remember_folds

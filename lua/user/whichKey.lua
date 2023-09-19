@@ -92,6 +92,22 @@ local opts = {
 
 local mappings = {
     a = { makeCommand "Alpha", "Alpha" },
+    b = {
+        name = "BufferLine",
+        p = {
+            makeCommand "BufferLineTogglePin",
+            "Pin tab",
+        },
+        P = { makeCommand "BufferLinePick", "Pick Tabs" },
+        h = {
+            makeCommand "BufferLineMovePrev",
+            "Move tab to left",
+        },
+        l = {
+            makeCommand "BufferLineMoveNext",
+            "Move tab to left",
+        },
+    },
     e = { makeCommand "NvimTreeToggle", "Explorer" },
     c = {
         name = "Config",
@@ -125,6 +141,7 @@ local mappings = {
     w = {
         name = "Write",
         w = { "<cmd>wa!<CR>", "Save All" },
+        q = { "<cmd>wqa!<CR>", "Save and Quit All" },
     },
 
     q = {
