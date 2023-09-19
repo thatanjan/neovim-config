@@ -162,5 +162,11 @@ lazy.setup {
         requires = "nvim-telescope/telescope.nvim",
     },
 
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+        opts = {},
+    },
+
     require "user.flash",
 }
