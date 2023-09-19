@@ -161,4 +161,12 @@ lazy.setup {
         "piersolenski/telescope-import.nvim",
         requires = "nvim-telescope/telescope.nvim",
     },
+
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+        opts = {},
+    },
+
+    require "user.flash",
 }
