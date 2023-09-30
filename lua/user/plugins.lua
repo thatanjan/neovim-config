@@ -169,4 +169,10 @@ lazy.setup {
     },
 
     require "user.flash",
+    {
+        "AckslD/muren.nvim",
+        config = true,
+    },
+
+    { "nvim-pack/nvim-spectre" },
 }
