@@ -179,4 +179,6 @@ lazy.setup {
     },
 
     { "nvim-pack/nvim-spectre" },
+
+    { "ThePrimeagen/harpoon" },
 }
