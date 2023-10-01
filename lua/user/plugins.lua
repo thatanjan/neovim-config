@@ -35,7 +35,11 @@ lazy.setup {
     { "akinsho/toggleterm.nvim" },
     { "ahmedkhalf/project.nvim" },
     { "lewis6991/impatient.nvim" },
-    { "lukas-reineke/indent-blankline.nvim" },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {},
+    },
     { "goolord/alpha-nvim" },
     { "folke/tokyonight.nvim" },
     { "lunarvim/darkplus.nvim" },
