@@ -23,7 +23,7 @@ telescope.setup {
     },
 }
 
-local extenstion_list = { "luasnip", "undo", "import" }
+local extenstion_list = { "luasnip", "undo", "import", "harpoon" }
 
 for _, extension in pairs(extenstion_list) do
     telescope.load_extension(extension)
