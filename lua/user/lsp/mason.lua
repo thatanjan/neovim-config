@@ -7,6 +7,9 @@ local servers = {
     "bashls",
     "jsonls",
     "yamlls",
+    "bashls",
+    "emmet_language_server",
+    "intelephense",
 }
 
 local settings = {

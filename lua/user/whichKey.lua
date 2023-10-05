@@ -171,6 +171,7 @@ local mappings = {
         r = { makeCommand "lua require 'gitsigns'.reset_hunk()", "Reset Hunk" },
         R = { makeCommand "lua require 'gitsigns'.reset_buffer()", "Reset Buffer" },
         s = { makeCommand "lua require 'gitsigns'.stage_hunk()", "Stage Hunk" },
+        S = { makeCommand "lua require 'gitsigns'.stage_buffer()", "Stage Buffer" },
         u = {
             "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
             "Undo Stage Hunk",
@@ -182,6 +183,7 @@ local mappings = {
             makeCommand "Gitsigns diffthis HEAD",
             "Diff",
         },
+        n = { "<cmd>Neogit<cr>", "Open Neogit" },
     },
 
     l = {

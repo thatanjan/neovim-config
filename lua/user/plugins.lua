@@ -170,9 +170,23 @@ lazy.setup {
         "m4xshen/hardtime.nvim",
         dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
         opts = {},
+        config = {
+            max_count = 10,
+        },
     },
 
     require "user.flash",
+
+    { "sindrets/diffview.nvim" }, -- optional
+
+    {
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim", -- required
+            "nvim-telescope/telescope.nvim", -- optional
+        },
+        config = true,
+    },
     {
         "AckslD/muren.nvim",
         config = true,
