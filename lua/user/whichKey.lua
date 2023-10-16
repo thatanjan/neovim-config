@@ -228,7 +228,7 @@ local mappings = {
             "Peek type Definition",
         },
         f = {
-            makeCommand "Lspsaga lsp_finder",
+            makeCommand "Lspsaga finder",
             "Lsp finder",
         },
         F = {

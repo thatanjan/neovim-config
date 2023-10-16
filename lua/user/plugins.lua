@@ -58,7 +58,14 @@ lazy.setup {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
-    { "nvimdev/lspsaga.nvim", dependencies = "nvim-lspconfig" },
+    {
+        "nvimdev/lspsaga.nvim",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter", -- optional
+            "kyazdani42/nvim-web-devicons", -- optional
+        },
+        event = "LspAttach",
+    },
     { "jose-elias-alvarez/typescript.nvim" },
     { "b0o/schemastore.nvim" },
     { "mfussenegger/nvim-lint" },
