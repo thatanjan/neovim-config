@@ -20,7 +20,7 @@
   "gruvbox": { "branch": "master", "commit": "f1ecde848f0cdba877acb0c740320568252cc482" },
   "hardtime.nvim": { "branch": "main", "commit": "4accbaa408ea6ddb8adf8fd735208570ed78d6f8" },
   "impatient.nvim": { "branch": "main", "commit": "47302af74be7b79f002773011f0d8e85679a7618" },
-  "indent-blankline.nvim": { "branch": "master", "commit": "0fe34b4c1b926e106d105d3ae88ef6cbf6743572" },
+  "indent-blankline.nvim": { "branch": "master", "commit": "0ac5dfe835ec0f201ef6af17d4737d43b4bfce0d" },
   "jellybeans.vim": { "branch": "master", "commit": "ef83bf4dc8b3eacffc97bf5c96ab2581b415c9fa" },
   "lazy.nvim": { "branch": "main", "commit": "ed6c9ffe2174bcfe4c17199ec4535aa4d4be1e62" },
   "lspsaga.nvim": { "branch": "main", "commit": "c66acbdf3dd10ab42219d270d1a6b9a096e85ff8" },
