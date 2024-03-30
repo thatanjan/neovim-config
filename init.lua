@@ -37,6 +37,7 @@ local modules = {
     "user.notify",
     "user.template-string",
     "user.copilot",
+    "user.user-commands",
 }
 
 for _, v in pairs(modules) do

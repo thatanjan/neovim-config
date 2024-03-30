@@ -112,6 +112,7 @@ local mappings = {
     c = {
         name = "Config",
         r = { makeCommand "lua dofile(vim.fn.stdpath('config') .. '/init.lua')", "Reload Config" },
+        p = { makeCommand "Copilot panel", "Open copilot panel" },
     },
     h = { makeCommand "nohlsearch", "No Highlight" },
 
@@ -265,7 +266,7 @@ local mappings = {
             makeCommand "Trouble quickfix",
             "Quickfix ",
         },
-        h = { makeCommand "ToggleTerm size=80 direction=horizontal", "horizontal" }, -- Exception
+        h = { makeCommand "ToggleTerm direction=horizontal size=10", "horizontal" }, -- Exception
     },
 
     s = {
