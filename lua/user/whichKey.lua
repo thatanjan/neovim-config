@@ -112,6 +112,7 @@ local mappings = {
     c = {
         name = "Config",
         r = { makeCommand "lua dofile(vim.fn.stdpath('config') .. '/init.lua')", "Reload Config" },
+        p = { makeCommand "Copilot panel", "Open copilot panel" },
     },
     h = { makeCommand "nohlsearch", "No Highlight" },
 
