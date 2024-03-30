@@ -13,4 +13,4 @@ vim.keymap.set("i", "<C-\\>", "<Plug>(copilot-accept-word)", { silent = true })
 
 vim.cmd [[highlight CopilotSuggestion guifg=#555555 ctermfg=8]]
 
-vim.cmd [[let g:copilot_workspace_folders = ["~/git_projects/"]]
+vim.g.copilot_workspace_folders = { "~/git_projects/", "~/.config/nvim" }
