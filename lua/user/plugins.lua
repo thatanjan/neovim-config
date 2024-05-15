@@ -138,7 +138,14 @@ lazy.setup {
         dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-treesitter/nvim-treesitter" } },
     },
     { "AlphaTechnolog/pywal.nvim", name = "pywal" },
-    { "folke/noice.nvim", dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" } },
+    { "catppuccin/nvim" },
+    {
+        "folke/noice.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            -- "rcarriga/nvim-notify"
+        },
+    },
     { "HiPhish/rainbow-delimiters.nvim" },
 
     {
