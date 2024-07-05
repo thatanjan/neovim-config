@@ -21,9 +21,13 @@ local options = {
     undofile = true, -- enable persistent undo
     updatetime = 300, -- faster completion (4000ms default)
     writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-    -- expandtab = true, -- convert tabs to spaces
-    shiftwidth = 4, -- the number of spaces inserted for each indentation
-    tabstop = 5, -- insert 2 spaces for a tab
+
+    -- tab and spaces options
+    expandtab = true, -- convert tabs to spaces
+    shiftwidth = 2, -- the number of spaces inserted for each indentation
+    tabstop = 2, -- insert 2 spaces for a tab
+    softtabstop = 2,
+
     autoindent = true, -- autoindent
     preserveindent = true, -- preserve indentation
     copyindent = true, -- copy indentation
@@ -39,6 +43,9 @@ local options = {
     sidescrolloff = 8,
     guifont = "monospace:h17", -- the font used in graphical neovim applications
     relativenumber = true, -- set relative numbered lines
+
+    textwidth = 80,
+    colorcolumn = "80", -- add a column at the 80th character
 }
 
 vim.opt.fillchars.eob = " "

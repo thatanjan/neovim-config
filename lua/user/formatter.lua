@@ -24,7 +24,7 @@ local prettierConfig = {
                 args = {
                     "--stdin-filepath",
                     util.escape_path(util.get_current_buffer_file_path()),
-                    "--use-tabs",
+                    -- "--use-tabs",
                 },
                 stdin = true,
                 try_node_modules = true,
@@ -36,7 +36,7 @@ local prettierConfig = {
             args = {
                 "--stdin-filepath",
                 util.escape_path(util.get_current_buffer_file_path()),
-                "--use-tabs",
+                -- "--use-tabs",
                 "--parser",
                 parser,
             },
@@ -121,12 +121,7 @@ local filetype = {
         end,
     },
     php = {
-        require("formatter.filetypes.php").phpcbf,
-        function()
-            return {
-                exe = "phpcbf",
-            }
-        end,
+        require("formatter.filetypes.php").php_cs_fixer,
     },
     markdown = {
         require("formatter.filetypes.markdown").prettier,

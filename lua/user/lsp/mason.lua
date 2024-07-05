@@ -9,7 +9,7 @@ local servers = {
     "yamlls",
     "bashls",
     "emmet_language_server",
-    "intelephense",
+    "phpactor",
 }
 
 local settings = {
