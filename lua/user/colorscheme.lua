@@ -1,7 +1,10 @@
--- local colorscheme = "tokyonight-night"
-local colorscheme = "pywal"
+local status_ok, themery = pcall(require, "themery")
 
-local status_ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
 if not status_ok then
     return
 end
+
+themery.setup {
+    themes = { "pywal", "catppuccin-macchiato", "tokyonight-night" },
+    livePreview = true,
+}
