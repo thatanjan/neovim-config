@@ -80,7 +80,7 @@ lazy.setup {
     { "mfussenegger/nvim-dap" },
     { "rcarriga/nvim-dap-ui" },
     { "ravenxrz/DAPInstall.nvim" },
-    { "folke/which-key.nvim" },
+    { "folke/which-key.nvim", event = "VeryLazy" },
     { "findango/vim-mdx" },
     {
         "folke/trouble.nvim",
@@ -225,4 +225,5 @@ lazy.setup {
         -- See Commands section for default commands if you want to lazy load on them
     },
     { "zaldih/themery.nvim" },
+    { "echasnovski/mini.icons", version = false },
 }
