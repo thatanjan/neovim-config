@@ -76,7 +76,7 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 keymap("n", "K", makeCommand "Lspsaga hover_doc")
 
 -- which-key
-opts.desc = "Open which-key"
-keymap("n", "<leader>", function()
-    require("which-key").show { global = false }
-end, opts)
+-- opts.desc = "Open which-key"
+-- keymap("n", "<leader>", function()
+--     require("which-key").show { global = false }
+-- end, opts)
