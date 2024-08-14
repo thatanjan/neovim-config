@@ -226,4 +226,9 @@ lazy.setup {
     },
     { "zaldih/themery.nvim" },
     { "echasnovski/mini.icons", version = false },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {},
+        dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
+    },
 }
