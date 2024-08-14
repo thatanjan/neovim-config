@@ -28,7 +28,6 @@ local modules = {
     "user.formatter",
     "user.todo",
     "user.colorizer",
-    "user.nvim-ufo",
     "user.lspsaga",
     "user.nvim-lint",
     "user.undotree",
