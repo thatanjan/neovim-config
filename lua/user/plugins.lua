@@ -160,6 +160,14 @@ lazy.setup {
         requires = "nvim-telescope/telescope.nvim",
     },
 
+    -- Telescope extenstion
+    {
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+            require("telescope").load_extension "frecency"
+        end,
+    },
+
     {
         "m4xshen/hardtime.nvim",
         dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },

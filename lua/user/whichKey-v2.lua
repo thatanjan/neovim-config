@@ -124,7 +124,8 @@ local mappings = {
         },
         c = { makeCommand "Telescope colorscheme", "Colorscheme" },
         f = {
-            makeCommand "Telescope find_files theme=dropdown previewer=false hidden=true",
+            -- makeCommand "Telescope find_files theme=dropdown previewer=false hidden=true",
+            makeCommand "Telescope frecency workspace=CWD theme=dropdown previewer=false hidden=true",
             "Find files",
         },
         h = { makeCommand "Telescope harpoon marks", "Find harpon files" },
