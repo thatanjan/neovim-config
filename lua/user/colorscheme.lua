@@ -5,6 +5,6 @@ if not status_ok then
 end
 
 themery.setup {
-    themes = { "pywal", "catppuccin-macchiato", "tokyonight-night" },
+    themes = { "pywal", "catppuccin-macchiato", "tokyonight-night", "catppuccin-mocha" },
     livePreview = true,
 }
