@@ -24,6 +24,7 @@ npairs.setup {
         highlight = "PmenuSel",
         highlight_grey = "LineNr",
     },
+    map_cr = false,
 }
 
 local cmp_autopairs = require "nvim-autopairs.completion.cmp"
