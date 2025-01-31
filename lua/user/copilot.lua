@@ -1,16 +1,47 @@
--- use this table to disable/enable filetypes
-vim.g.copilot_filetypes = { xml = false, markdown = true, markdownjsx = true }
+local M = {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+        require("copilot").setup {
+            panel = {
+                enabled = true,
+                auto_refresh = false,
+                keymap = {
+                    jump_prev = "[[",
+                    jump_next = "]]",
+                    accept = "<CR>",
+                    refresh = "gr",
+                    open = "<M-CR>",
+                },
+                layout = {
+                    position = "bottom", -- | top | left | right | horizontal | vertical
+                    ratio = 0.4,
+                },
+            },
+            suggestion = {
+                enabled = true,
+                auto_trigger = true,
+                hide_during_completion = false,
+                debounce = 75,
+                keymap = {
+                    accept = "<M-y>",
+                    accept_line = "<C-[>",
+                    accept_word = "<C-]>",
+                    next = "<M-]>",
+                    prev = "<M-[>",
+                    dismiss = "<C-x>",
+                },
+            },
+            filetypes = {
+                help = false,
+                gitrebase = false,
+                ["."] = true,
+            },
+            copilot_node_command = "node", -- Node.js version must be > 18.x
+            server_opts_overrides = {},
+        }
+    end,
+}
 
--- since most are enabled by default you can turn them off
--- using this table and only enable for a few filetypes
-vim.g.copilot_filetypes = { ["*"] = true, python = true }
-
--- vim.g.copilot_no_tab_map = true
-vim.cmd [[imap <silent><script><expr> <A-j> copilot#Accept("\<CR>")]]
-vim.g.copilot_no_tab_map = true
-
-vim.keymap.set("i", "<C-\\>", "<Plug>(copilot-accept-word)", { silent = true })
-
-vim.cmd [[highlight CopilotSuggestion guifg=#555555 ctermfg=8]]
-
-vim.g.copilot_workspace_folders = { "~/git_projects/", "~/.config/nvim" }
+return M

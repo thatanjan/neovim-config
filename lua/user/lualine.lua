@@ -57,7 +57,7 @@ lualine.setup {
         lualine_b = { "branch" },
         lualine_c = { get_session_name },
         lualine_d = { diagnostics },
-        lualine_x = { diff, spaces, "encoding", filetype },
+        lualine_x = { "copilot", diff, spaces, "encoding", filetype },
         lualine_y = { location },
         lualine_z = { "progress" },
     },

@@ -198,22 +198,10 @@ lazy.setup {
     { "nvim-pack/nvim-spectre" },
 
     require "user.harpoon",
+    require "user.copilot",
 
-    { "github/copilot.vim" },
-    {
-        "CopilotC-Nvim/CopilotChat.nvim",
-        branch = "main",
-        dependencies = {
-            { "github/copilot.vim" }, -- or github/copilot.vim
-            { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-        },
-        build = "make tiktoken",
-        opts = {
-            debug = true, -- Enable debugging
-            -- See Configuration section for rest
-        },
-        -- See Commands section for default commands if you want to lazy load on them
-    },
+    "AndreM222/copilot-lualine",
+
     { "zaldih/themery.nvim" },
     { "echasnovski/mini.icons", version = false },
     {

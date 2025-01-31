@@ -1,6 +1,5 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
-  "CopilotChat.nvim": { "branch": "main", "commit": "1b375c24602680b5fe28c3c223a822111857dc37" },
   "DAPInstall.nvim": { "branch": "main", "commit": "8798b4c36d33723e7bba6ed6e2c202f84bb300de" },
   "LuaSnip": { "branch": "master", "commit": "878ace11983444d865a72e1759dbcc331d1ace4c" },
   "alpha-nvim": { "branch": "main", "commit": "41283fb402713fc8b327e60907f74e46166f4cfd" },
@@ -10,7 +9,8 @@
   "cmp-nvim-lua": { "branch": "main", "commit": "f12408bdb54c39c23e67cab726264c10db33ada8" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
-  "copilot.vim": { "branch": "release", "commit": "87038123804796ca7af20d1b71c3428d858a9124" },
+  "copilot-lualine": { "branch": "main", "commit": "dc4b8ed0f75bc2557b3158c526624bf04ad233ea" },
+  "copilot.lua": { "branch": "master", "commit": "886ee73b6d464b2b3e3e6a7ff55ce87feac423a9" },
   "darkplus.nvim": { "branch": "master", "commit": "75548e02e34ee21e8bdef1739f96f19125160000" },
   "diffview.nvim": { "branch": "main", "commit": "1ec7b56b959dab18f7030f541c33ae60e18a6f88" },
   "editorconfig.nvim": { "branch": "master", "commit": "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf" },
