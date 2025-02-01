@@ -199,6 +199,21 @@ lazy.setup {
 
     require "user.harpoon",
     require "user.copilot",
+    require "user.avante",
+    require "user.codecompanion",
+
+    {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        dependencies = {
+            { "zbirenbaum/copilot.lua" },
+            { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+        },
+        build = "make tiktoken", -- Only on MacOS or Linux
+        opts = {
+            -- See Configuration section for options
+        },
+        -- See Commands section for default commands if you want to lazy load on them
+    },
 
     "AndreM222/copilot-lualine",
 
@@ -206,7 +221,10 @@ lazy.setup {
     { "echasnovski/mini.icons", version = false },
     {
         "MeanderingProgrammer/render-markdown.nvim",
-        opts = {},
+        opts = {
+            file_types = { "markdown", "Avante", "codecompanion" },
+        },
+        ft = { "markdown", "Avante", "codecompanion" },
         dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
     },
 
