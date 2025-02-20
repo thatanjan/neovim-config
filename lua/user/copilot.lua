@@ -36,6 +36,7 @@ local M = {
             filetypes = {
                 help = false,
                 gitrebase = false,
+                markdown = true,
                 ["."] = true,
             },
             copilot_node_command = "node", -- Node.js version must be > 18.x
