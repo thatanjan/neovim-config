@@ -57,7 +57,7 @@ local new_mappings_table = {
     { key = "fc", command = makeCommand "Telescope colorscheme", desc = "Colorscheme" },
     {
         key = "ff",
-        command = makeCommand "Telescope find_files theme=dropdown previewer=false hidden=true",
+        command = makeCommand "Telescope frecency workspace=CWD theme=dropdown previewer=false hidden=true",
         desc = "Find files",
     },
     { key = "fh", command = makeCommand "Telescope harpoon marks", desc = "Find harpoon files" },
