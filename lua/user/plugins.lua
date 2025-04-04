@@ -118,7 +118,20 @@ lazy.setup {
         dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-treesitter/nvim-treesitter" } },
     },
     { "AlphaTechnolog/pywal.nvim", name = "pywal" },
-    { "catppuccin/nvim" },
+    {
+        "catppuccin/nvim",
+        config = function()
+            require("catppuccin").setup {
+                term_colors = true,
+                -- transparent_background = true,
+                color_overrides = {
+                    mocha = {
+                        base = "#1E1E2E",
+                    },
+                },
+            }
+        end,
+    },
     {
         "folke/noice.nvim",
         dependencies = {
