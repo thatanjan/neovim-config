@@ -43,5 +43,10 @@ local modules = {
 
 for _, v in pairs(modules) do
     package.loaded[v] = nil
-    require(v)
+
+    local status_ok = pcall(require, v)
+    if not status_ok then
+        return
+    end
+    -- require(v)
 end
