@@ -47,12 +47,12 @@ lazy.setup {
     { "nanotech/jellybeans.vim" },
     { "AlexvZyl/nordic.nvim" },
     { "shaunsingh/nord.nvim" },
-    { "hrsh7th/nvim-cmp" },
-    { "hrsh7th/cmp-buffer" },
-    { "hrsh7th/cmp-path" },
-    { "saadparwaiz1/cmp_luasnip" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-nvim-lua" },
+    -- { "hrsh7th/nvim-cmp" },
+    -- { "hrsh7th/cmp-buffer" },
+    -- { "hrsh7th/cmp-path" },
+    -- { "saadparwaiz1/cmp_luasnip" },
+    -- { "hrsh7th/cmp-nvim-lsp" },
+    -- { "hrsh7th/cmp-nvim-lua" },
     { "L3MON4D3/LuaSnip" },
     { "rafamadriz/friendly-snippets" },
     { "williamboman/mason.nvim" },
@@ -113,6 +113,10 @@ lazy.setup {
             require("treesj").setup {}
         end,
     },
+
+    -- Blink
+    require "user.blink",
+
     {
         "ThePrimeagen/refactoring.nvim",
         dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-treesitter/nvim-treesitter" } },
@@ -213,7 +217,7 @@ lazy.setup {
     require "user.harpoon",
     require "user.copilot",
     require "user.avante",
-    require "user.codecompanion",
+    -- require "user.codecompanion",
 
     {
         "CopilotC-Nvim/CopilotChat.nvim",

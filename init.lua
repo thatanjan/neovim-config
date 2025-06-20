@@ -4,7 +4,6 @@ local modules = {
     "user.plugins",
     "user.autocommands",
     "user.colorscheme",
-    "user.cmp",
     "user.telescope",
     "user.treesitter",
     "user.autopairs",
