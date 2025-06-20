@@ -47,12 +47,6 @@ lazy.setup {
     { "nanotech/jellybeans.vim" },
     { "AlexvZyl/nordic.nvim" },
     { "shaunsingh/nord.nvim" },
-    -- { "hrsh7th/nvim-cmp" },
-    -- { "hrsh7th/cmp-buffer" },
-    -- { "hrsh7th/cmp-path" },
-    -- { "saadparwaiz1/cmp_luasnip" },
-    -- { "hrsh7th/cmp-nvim-lsp" },
-    -- { "hrsh7th/cmp-nvim-lua" },
     { "L3MON4D3/LuaSnip" },
     { "rafamadriz/friendly-snippets" },
     { "williamboman/mason.nvim" },
@@ -62,7 +56,7 @@ lazy.setup {
         "nvimdev/lspsaga.nvim",
         dependencies = {
             "nvim-treesitter/nvim-treesitter", -- optional
-            "kyazdani42/nvim-web-devicons", -- optional
+            "kyazdani42/nvim-web-devicons",    -- optional
         },
         event = "LspAttach",
     },
@@ -80,7 +74,7 @@ lazy.setup {
     { "mfussenegger/nvim-dap" },
     { "rcarriga/nvim-dap-ui" },
     { "ravenxrz/DAPInstall.nvim" },
-    { "folke/which-key.nvim", event = "VeryLazy" },
+    { "folke/which-key.nvim",              event = "VeryLazy" },
     { "findango/vim-mdx" },
     {
         "folke/trouble.nvim",
@@ -95,7 +89,7 @@ lazy.setup {
     { "gpanders/editorconfig.nvim" },
     { "nanotee/sqls.nvim" },
     { "pantharshit00/vim-prisma" },
-    { "folke/todo-comments.nvim", dependencies = "nvim-lua/plenary.nvim" },
+    { "folke/todo-comments.nvim",     dependencies = "nvim-lua/plenary.nvim" },
     { "norcalli/nvim-colorizer.lua" },
     { "windwp/nvim-ts-autotag" },
     {
@@ -202,7 +196,7 @@ lazy.setup {
     {
         "NeogitOrg/neogit",
         dependencies = {
-            "nvim-lua/plenary.nvim", -- required
+            "nvim-lua/plenary.nvim",         -- required
             "nvim-telescope/telescope.nvim", -- optional
         },
         config = true,
@@ -225,7 +219,7 @@ lazy.setup {
             { "zbirenbaum/copilot.lua" },
             { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
         },
-        build = "make tiktoken", -- Only on MacOS or Linux
+        build = "make tiktoken",                            -- Only on MacOS or Linux
         opts = {
             -- See Configuration section for options
         },
@@ -253,8 +247,8 @@ lazy.setup {
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
             "nvim-telescope/telescope.nvim", -- optional
-            "neovim/nvim-lspconfig", -- optional
+            "neovim/nvim-lspconfig",         -- optional
         },
-        opts = {}, -- your configuration
+        opts = {},                           -- your configuration
     },
 }
