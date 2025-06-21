@@ -19,6 +19,9 @@ if not status_ok then
 end
 
 lazy.setup {
+
+    require "user.blink",
+
     { "nvim-lua/plenary.nvim" },
     {
         "windwp/nvim-autopairs",
