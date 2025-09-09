@@ -44,3 +44,5 @@ for _, v in pairs(modules) do
     package.loaded[v] = nil
     require(v)
 end
+
+require("luasnip/loaders/from_vscode").lazy_load()
