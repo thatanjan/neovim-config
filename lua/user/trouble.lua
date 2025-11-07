@@ -1,49 +1,137 @@
+---@type trouble.Config
 local config = {
-    position = "bottom", -- position of the list can be: bottom, top, left, right
-    height = 10, -- height of the trouble list when position is top or bottom
-    width = 50, -- width of the list when position is left or right
-    icons = true, -- use devicons for filenames
-    mode = "workspace_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
-    fold_open = "", -- icon used for open folds
-    fold_closed = "", -- icon used for closed folds
-    group = true, -- group results by file
-    padding = true, -- add an extra new line on top of the list
-    action_keys = { -- key mappings for actions in the trouble list
-        -- map to {} to remove a mapping, for example:
-        -- close = {},
-        close = "q", -- close the list
-        cancel = "<esc>", -- cancel the preview and get back to your last window / buffer / cursor
-        refresh = "r", -- manually refresh
-        jump = { "<cr>", "<tab>" }, -- jump to the diagnostic or open / close folds
-        open_split = { "<c-x>" }, -- open buffer in new split
-        open_vsplit = { "<c-v>" }, -- open buffer in new vsplit
-        open_tab = { "<c-t>" }, -- open buffer in new tab
-        jump_close = { "o" }, -- jump to the diagnostic and close the list
-        toggle_mode = "m", -- toggle between "workspace" and "document" diagnostics mode
-        toggle_preview = "P", -- toggle auto_preview
-        hover = "K", -- opens a small popup with the full multiline message
-        preview = "p", -- preview the diagnostic location
-        close_folds = { "zM", "zm" }, -- close all folds
-        open_folds = { "zR", "zr" }, -- open all folds
-        toggle_fold = { "zA", "za" }, -- toggle fold of current file
-        previous = "k", -- preview item
-        next = "j", -- next item
+    focus = true, -- Focus the window when opened
+    restore = true, -- restores the last location in the list when opening
+    warn_no_results = true, -- show a warning when there are no results
+
+    -- Key mappings can be set to the name of a builtin action,
+    -- or you can define your own custom action.
+    ---@type table<string |false>
+    keys = {
+        gb = { -- example of a custom action that toggles the active view filter
+            action = function(view)
+                view:filter({ buf = 0 }, { toggle = true })
+            end,
+            desc = "Toggle Current Buffer Filter",
+        },
+        s = { -- example of a custom action that toggles the severity
+            action = function(view)
+                local f = view:get_filter "severity"
+                local severity = ((f and f.filter.severity or 0) + 1) % 5
+                view:filter({ severity = severity }, {
+                    id = "severity",
+                    template = "{hl:Title}Filter:{hl} {severity}",
+                    del = severity == 0,
+                })
+            end,
+            desc = "Toggle Severity Filter",
+        },
     },
-    indent_lines = true, -- add an indent guide below the fold icons
-    auto_open = false, -- automatically open the list when you have diagnostics
-    auto_close = false, -- automatically close the list when you have no diagnostics
-    auto_preview = true, -- automatically preview the location of the diagnostic. <esc> to close preview and go back to last window
-    auto_fold = false, -- automatically fold a file trouble list at creation
-    auto_jump = { "lsp_definitions" }, -- for the given modes, automatically jump if there is only a single result
-    signs = {
-        -- icons / text used for a diagnostic
-        error = "",
-        warning = "",
-        hint = "",
-        information = "",
-        other = "﫠",
+    ---@type table<string, trouble.Mode>
+    modes = {
+        -- sources define their own modes, which you can use directly,
+        -- or override like in the example below
+        lsp_references = {
+            -- some modes are configurable, see the source code for more details
+            params = {
+                include_declaration = true,
+            },
+        },
+        -- The LSP base mode for:
+        -- * lsp_definitions, lsp_references, lsp_implementations
+        -- * lsp_type_definitions, lsp_declarations, lsp_command
+        lsp_base = {
+            params = {
+                -- don't include the current location in the results
+                include_current = false,
+            },
+        },
+        -- more advanced example that extends the lsp_document_symbols
+        symbols = {
+            desc = "document symbols",
+            mode = "lsp_document_symbols",
+            focus = false,
+            win = { position = "right" },
+            filter = {
+                -- remove Package since luals uses it for control flow structures
+                ["not"] = { ft = "lua", kind = "Package" },
+                any = {
+                    -- all symbol kinds for help / markdown files
+                    ft = { "help", "markdown" },
+                    -- default set of symbol kinds
+                    kind = {
+                        "Class",
+                        "Constructor",
+                        "Enum",
+                        "Field",
+                        "Function",
+                        "Interface",
+                        "Method",
+                        "Module",
+                        "Namespace",
+                        "Package",
+                        "Property",
+                        "Struct",
+                        "Trait",
+                    },
+                },
+            },
+        },
+        diagnostics_buffer = {
+            mode = "diagnostics", -- inherit from diagnostics mode
+            filter = { buf = 0 }, -- filter diagnostics to the current buffer
+        },
     },
-    use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
+    icons = {
+        ---@type trouble.Indent.symbols
+        indent = {
+            top = "│ ",
+            middle = "├╴",
+            last = "└╴",
+            -- last          = "-╴",
+            -- last       = "╰╴", -- rounded
+            fold_open = " ",
+            fold_closed = " ",
+            ws = "  ",
+        },
+        folder_closed = " ",
+        folder_open = " ",
+        kinds = {
+            Array = " ",
+            Boolean = "󰨙 ",
+            Class = " ",
+            Constant = "󰏿 ",
+            Constructor = " ",
+            Enum = " ",
+            EnumMember = " ",
+            Event = " ",
+            Field = " ",
+            File = " ",
+            Function = "󰊕 ",
+            Interface = " ",
+            Key = " ",
+            Method = "󰊕 ",
+            Module = " ",
+            Namespace = "󰦮 ",
+            Null = " ",
+            Number = "󰎠 ",
+            Object = " ",
+            Operator = " ",
+            Package = " ",
+            Property = " ",
+            String = " ",
+            Struct = "󰆼 ",
+            TypeParameter = " ",
+            Variable = "󰀫 ",
+        },
+    },
 }
 
-return config
+local M = {
+    "folke/trouble.nvim",
+    opts = config,
+    cmd = "Trouble",
+    dependencies = "kyazdani42/nvim-web-devicons",
+}
+
+return M
