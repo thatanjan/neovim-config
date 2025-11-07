@@ -46,7 +46,12 @@ local prettierConfig = {
     end,
 }
 
-local js_config = (is_in_droppe and {}) or prettierConfig
+local biome_config = {
+    require("formatter.filetypes.typescript").biome,
+}
+-- local js_config = (is_in_droppe and {}) or prettierConfig
+
+local js_config = biome_config
 
 local filetype = {
     -- Formatter configurations for filetype "lua" go here
