@@ -79,14 +79,9 @@ lazy.setup {
     { "ravenxrz/DAPInstall.nvim" },
     { "folke/which-key.nvim", event = "VeryLazy" },
     { "findango/vim-mdx" },
-    {
-        "folke/trouble.nvim",
-        dependencies = "kyazdani42/nvim-web-devicons",
-        config = function()
-            local troubleConfig = require "./trouble"
-            require("trouble").setup(troubleConfig)
-        end,
-    },
+
+    require "user.trouble",
+
     { "mattn/emmet-vim" },
     { "iamcco/markdown-preview.nvim", build = "cd app && yarn install" },
     { "gpanders/editorconfig.nvim" },
@@ -184,6 +179,7 @@ lazy.setup {
         opts = {},
         config = {
             max_count = 10,
+            enabled = true,
         },
     },
 
@@ -233,6 +229,7 @@ lazy.setup {
         "MeanderingProgrammer/render-markdown.nvim",
         opts = {
             file_types = { "markdown", "Avante", "codecompanion" },
+            latex = { enabled = false },
         },
         ft = { "markdown", "Avante", "codecompanion" },
         dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
