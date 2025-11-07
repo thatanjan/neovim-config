@@ -3,6 +3,8 @@ if not status_ok then
     return
 end
 
+local open_with_trouble = require("trouble.sources.telescope").open
+
 local actions = require "telescope.actions"
 
 telescope.setup {
@@ -18,6 +20,7 @@ telescope.setup {
                 ["<Up>"] = actions.cycle_history_prev,
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
+                ["<c-t>"] = open_with_trouble,
             },
         },
     },
@@ -28,7 +31,7 @@ local extenstion_list = {
     "undo",
     "import",
     "harpoon",
-    "codecompanion"
+    "codecompanion",
 }
 
 for _, extension in pairs(extenstion_list) do
