@@ -253,11 +253,11 @@ local mappings = {
     t = {
         name = "Trouble",
         w = {
-            makeCommand "Trouble workspace_diagnostics",
+            makeCommand "Trouble diagnostics",
             "Workspace Diagnostics with Trouble",
         },
         d = {
-            makeCommand "Trouble document_diagnostics",
+            makeCommand "Trouble diagnostics_buffer",
             "Document Diagnostics with Trouble",
         },
         r = {
