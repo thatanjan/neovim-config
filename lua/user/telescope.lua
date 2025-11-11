@@ -24,6 +24,14 @@ telescope.setup {
             },
         },
     },
+    extensions = {
+        frecency = {
+            auto_validate = true,
+            db_validate_threshold = 10,
+            path_display = { "filename_first" },
+            show_filter_column = false,
+        },
+    },
 }
 
 local extenstion_list = {
