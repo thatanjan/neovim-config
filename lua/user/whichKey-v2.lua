@@ -122,7 +122,7 @@ local mappings = {
             makeCommand "Telescope buffers theme=dropdown previewer=false",
             "Buffers",
         },
-        c = { makeCommand "Telescope colorscheme", "Colorscheme" },
+        c = { makeCommand "Themery", "Colorscheme" },
         f = {
             makeCommand "Telescope find_files theme=dropdown previewer=false hidden=true",
             -- makeCommand "Telescope frecency workspace=CWD theme=dropdown previewer=false hidden=true",

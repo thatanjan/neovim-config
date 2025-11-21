@@ -33,11 +33,10 @@ lazy.setup {
     { "kyazdani42/nvim-web-devicons" },
     { "kyazdani42/nvim-tree.lua" },
     { "akinsho/bufferline.nvim" },
-    { "moll/vim-bbye" },
+    { "moll/vim-bbye" }, -- TODO: Check
     { "nvim-lualine/lualine.nvim" },
     { "akinsho/toggleterm.nvim" },
     { "ahmedkhalf/project.nvim" },
-    { "lewis6991/impatient.nvim" },
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",

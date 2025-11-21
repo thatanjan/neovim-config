@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 local modules = {
     "user.options",
     "user.keymaps",
