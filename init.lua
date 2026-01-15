@@ -8,7 +8,7 @@ local modules = {
     "user.colorscheme",
     "user.telescope",
     "user.treesitter",
-    "user.autopairs",
+    -- "user.autopairs",
     "user.comment",
     "user.gitsigns",
     "user.nvim-tree",
