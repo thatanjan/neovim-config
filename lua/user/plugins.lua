@@ -23,11 +23,7 @@ lazy.setup {
     require "user.blink",
 
     { "nvim-lua/plenary.nvim" },
-    {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        opts = {}, -- this is equalent to setup({}) function
-    },
+    require "user.autopairs",
     { "numToStr/Comment.nvim" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "kyazdani42/nvim-web-devicons" },

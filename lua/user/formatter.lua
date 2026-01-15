@@ -9,10 +9,9 @@ if not status_ok_util then
 end
 
 local function starts_with(str, start)
+    -- local is_in_dir = starts_with(vim.loop.cwd(), "<path>")
     return str:sub(1, #start) == start
 end
-
-local is_in_droppe = starts_with(vim.loop.cwd(), "/home/anjan/git_projects/droppe-one/frontend")
 
 local prettierConfig = {
     require("formatter.filetypes.typescript").prettier,
@@ -49,9 +48,8 @@ local prettierConfig = {
 local biome_config = {
     require("formatter.filetypes.typescript").biome,
 }
--- local js_config = (is_in_droppe and {}) or prettierConfig
 
-local js_config = biome_config
+local js_config = prettierConfig
 
 local filetype = {
     -- Formatter configurations for filetype "lua" go here

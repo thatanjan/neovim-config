@@ -5,6 +5,9 @@ local keymap = vim.keymap.set
 -- Go to definition
 keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
+-- Show hover doc
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+
 -- Show line diagnostics
 -- You can pass argument ++unfocus to
 -- unfocus the show_line_diagnostics floating window

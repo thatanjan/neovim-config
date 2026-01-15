@@ -71,10 +71,6 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
--- Lsp
--- keymap("n", "K", )
-keymap("n", "K", makeCommand "Lspsaga hover_doc")
-
 -- which-key
 -- opts.desc = "Open which-key"
 -- keymap("n", "<leader>", function()
